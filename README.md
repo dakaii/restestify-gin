@@ -1,4 +1,6 @@
-#Middleware for GIN and RESTestify
+# RESTestify middleware for GIN
+### read more about [RESTestify](https://www.restestify.com/)
+#### [![CircleCI](https://circleci.com/gh/thedanielforum/restestify-gin.svg?style=svg)](https://circleci.com/gh/thedanielforum/restestify-gin)
 
 Example usage
 ```go
@@ -10,7 +12,7 @@ func setupRouter() *gin.Engine {
 	r.Use(gin.Logger())
 	// Add RESTestify as a middleware.
 	// Remeber to spesify your api key
-	r.Use(restestify.Logger("api key"))
+	r.Use(restestify.Logger("api_key"))
 
 	// Ping test
 	r.GET("/ping", func(c *gin.Context) {
