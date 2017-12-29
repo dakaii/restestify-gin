@@ -1,6 +1,6 @@
 # RESTestify middleware for GIN
 ### read more about [RESTestify](https://www.restestify.com/)
-#### [![CircleCI](https://circleci.com/gh/thedanielforum/restestify-gin.svg?style=svg)](https://circleci.com/gh/thedanielforum/restestify-gin)
+#### [![CircleCI](https://circleci.com/gh/thedanielforum/restestify-gin.svg?style=svg)](https://circleci.com/gh/thedanielforum/restestify-gin) [![GoDoc](https://godoc.org/github.com/thedanielforum/restestify-gin?status.svg)](https://godoc.org/github.com/thedanielforum/restestify-gin)
 
 Example usage
 ```go
