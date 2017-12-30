@@ -16,6 +16,7 @@ type Request struct {
 	Latency  int64     `json:"latency"`
 	ClientIp string    `json:"client_ip"`
 	Time     time.Time `json:"time"`
+	Hostname string    `json:"hostname"`
 }
 
 type RequestCollection struct {

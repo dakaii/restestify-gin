@@ -7,10 +7,14 @@ import (
 	"encoding/base64"
 	"runtime"
 	"sync"
+	"os"
 )
 
-var once sync.Once
-var apiKey string
+var (
+	once     sync.Once
+	apiKey   string
+	hostname string
+)
 
 func Logger(key string) gin.HandlerFunc {
 	// Init
@@ -19,6 +23,8 @@ func Logger(key string) gin.HandlerFunc {
 		// Start workers
 		JobQueue = make(chan Job)
 		NewDispatcher(runtime.NumCPU()).Run()
+		// Get the hostname
+		hostname, _ = os.Hostname()
 	})
 
 	return func(c *gin.Context) {
@@ -52,6 +58,7 @@ func Logger(key string) gin.HandlerFunc {
 				ClientIp: clientIP,
 				Method:   method,
 				Time:     end.UTC(),
+				Hostname: hostname,
 			}}
 		}
 	}
