@@ -51,6 +51,7 @@ func Logger(key string) gin.HandlerFunc {
 				Latency:  latency.Nanoseconds(),
 				ClientIp: clientIP,
 				Method:   method,
+				Time:     end.UTC(),
 			}}
 		}
 	}

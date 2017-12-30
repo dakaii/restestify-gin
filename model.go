@@ -45,5 +45,9 @@ func (r *Request) Upload() error {
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode != 200 {
+		log.Printf("error: restestify api responded with non 200 code: %d", resp.StatusCode)
+	}
+
 	return nil
 }
